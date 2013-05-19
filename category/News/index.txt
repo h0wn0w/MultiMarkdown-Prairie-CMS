@@ -1,0 +1,7 @@
+Title:				News
+Date:				05/19/2013 
+Tags:				News, Events
+
+Here is some news and information about upcoming events.  
+
+Don't forget to join our [mailing list](mailto:#)!

@@ -1,0 +1,9 @@
+Title: MultiMarkdown-based CMS
+Tags:
+
+This is the default page for the MultiMarkdown-Prairie Content Management
+System. This is a fork of the original MMD CMS, which was developed by Fletcher Penney. This version is responsive, and will adjust to adapt to any size screen. 
+
+Learn more about the original MultiMarkdown CMS at <http://fletcherpenney.net/multimarkdown/cms/>.
+
+<!--#include virtual="cgi/latest_stories.cgi" -->

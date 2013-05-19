@@ -1,0 +1,173 @@
+/*
+
+howard's css. that's right. 
+
+*/
+
+/* Elements
+======================================== */
+
+body {
+  background: #eee;
+  color: #2e2d2b;
+}
+
+h1 {
+    font-size: 2em;
+    line-height:1.4em;
+    /*margin: 0.67em 0;*/
+}
+
+h2 {
+    font-size: 1.5em;
+    /*margin: 0.83em 0;*/
+    cursor: pointer;
+}
+
+h3 {
+    font-size: 1.17em;
+    padding-left: 1.0em;
+    /*margin: 1em 0;*/
+    cursor: pointer;
+}
+
+h4 {
+    font-size: 1em;
+    /*margin: 1.33em 0;*/
+}
+
+h5 {
+    font-size: 0.83em;
+    /*margin: 1.67em 0;*/
+}
+
+h6 {
+    font-size: 0.67em;
+    /*margin: 2.33em 0;*/
+}
+
+img {
+}
+
+aside {
+  float: right;
+  clear: right;
+  width: 16em;
+  z-index: -1;
+  padding: 10px 10px 0px 0px;
+  margin-top: 30px;
+  /*margin-top: -12.5em;*/
+}
+
+
+footer {
+  width: 100%;
+  height: 120px;
+  background: #1f1f1f;
+  border-top: 20px solid #2e2d2b;
+  color: #eee;
+}
+
+header {
+  background: #ffe793;
+  border-bottom: 10px solid #ffde7d;
+  color: #2e2d2b;
+  text-align: center;
+}
+
+nav > a {
+  padding: 0px 5px;
+}
+
+nav > ul > li > ul > li > a {
+  display: inline;
+  background: #ffde7d; 
+}
+
+:focus {
+  outline: none;
+}
+
+/* Classes
+======================================== */
+
+[class^="icon-"], [class*=" icon-"] {
+  padding: 10px 10px;
+}
+
+.acc1 {
+
+}
+
+.acc2 {
+
+}
+
+.dropdown-group {
+  width: 100%;
+  /*height: 30px;*/
+  margin: 0 auto;
+  text-align: center;
+  display: none;
+/*  visibility:hidden;*/
+}
+
+.dropdown-group > li {
+  height: 30px;
+}
+
+.hid {
+  /*visibility: hidden;*/
+  display: none;
+}
+
+.lite {
+  opacity: 0.5;
+}
+
+.maintitle {
+  font-size: 2.5em;
+}
+
+.red {
+  color: red;
+}
+
+.select {
+  border: 1px solid;
+  border-color: #ffbf00;
+}
+
+.slideact {
+  width: 40px;
+  height: 50px;
+  float: left;
+  position: relative;
+  background-color: #000;
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+/* IDs
+========================================*/
+
+#mainpage {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  /*font-size: 24px;*/
+}
+
+#curriculum {
+  font-family: 'Alegreya', serif;
+  font-weight: 400;
+}
+
+#curriculum p {
+  padding-left: 2.3em;
+}
+

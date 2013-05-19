@@ -1,0 +1,17 @@
+Title:                          About Dr. Teichner
+Subtitle:                       
+Author:                         A. Gordon Teichner, Ph.D., ABPP
+Web:                            
+Date:                           130424
+Copyright:                  	This work is licensed under a Creative Commons License.  
+                                http://creativecommons.org/licenses/by-nc-sa/3.0/
+XMP:                            CCAttributionShareAlike
+Tags:                   	
+Encryption Version:            	1
+Base Header Level:          	
+XHTML XSLT:                 	xhtml-static-site.xslt
+
+![Dr. Teichner][1]
+Dr. Gordon Teichner obtained his Ph.D. in Clinical Psychology with a speciality in Neuropsychology from Nova Southeastern University. He completed an Internship in Clinical Psychology and two year Fellowship in Clinical Neuropsychology at the Medical University of South Carolina. Dr. Teichner is Board Certified in Clinical Psychology by the American Board of Professional Psychology and a Fellow of the American Academy of Clinical Psychology. He holds membership in the American Psychological Association, National Academy of Neuropsychology, American Psychological Association Division 40 (Neuropsychology), and South Carolina Psychological Association. He has 20+ years of clinical experience in the mental health field evaluating and treating children, adolescents, adults, and the elderly. Dr. Teichner has also published extensively in peer reviewed scientific journals and has presented more than 70 research studies at international, national, and state conferences.
+
+[Dr. Teichner]: ../img/teichner_head_shot.jpg

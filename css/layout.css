@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 60em;
+  text-align: center;
+}
+div { text-align: left; }
+.header {
+  background-position: -10px 0px;
+  position: relative;
+  padding: 10px 10px 0px 10px;
+  max-width: 60em;
+  margin: 1.75em auto 0em auto;
+}
+.wrapper {
+  position: relative;
+  width: 100%;
+  min-width: 59em;
+  clear: both;
+  overflow: hidden;
+  max-width: 59em;
+  margin: 0 auto;
+  margin-bottom: 1.75em;
+}
+.innerwrapper {
+  float: left;
+  width: 200%;
+  position: relative;
+}
+.contentwrapper {
+  position: relative;
+  padding-bottom: 1em;
+}
+.content {
+  max-width: 35em;
+  overflow: hidden;
+  margin: 0 2.5em 0 16.5em;
+}
+.sidebar {
+  width: 14em;
+  position: relative;
+}
+.footer {
+  clear: both;
+  float: left;
+  width: 100%;
+  min-width: 59em;
+  font-size: 0.75em;
+}
+.rightmenu .innerwrapper {
+  margin-left: -14em;
+  right: 100%;
+}
+.rightmenu .contentwrapper {
+  float: left;
+  left: 50%;
+}
+.rightmenu .sidebar {
+  float: right;
+  left: 11.5em;
+}
+.leftmenu .innerwrapper { left: 19em; }
+.leftmenu .contentwrapper {
+  float: right;
+  right: 24em;
+}
+.leftmenu .content {
+  position: relative;
+  right: 100%;
+}
+.leftmenu .sidebar {
+  float: left;
+  right: 16.5em;
+}
