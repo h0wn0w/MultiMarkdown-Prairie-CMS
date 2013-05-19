@@ -105,7 +105,7 @@ a:active, a:focus { outline: none; }
 ----------------------------------------------------------------------------------------*/
 header {
   padding: 1.0em;
-  text-align: center;
+  text-align: left;
 }
 
 footer {

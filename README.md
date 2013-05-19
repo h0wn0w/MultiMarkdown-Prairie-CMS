@@ -3,8 +3,11 @@ Author:	Fletcher T. Penney
 Date:	January 31, 2010  
 Tags:	MultiMarkdown, web, server  
 
-# Introduction #
+# MultiMarkdown-Prairie-CMS #
 
+The MultiMarkdown Content Management System, updated for responsive web design using the Goldilocks Approach
+
+# Introduction #
 ***NOTE**: MultiMarkdown CMS is now updated to work with MMD 3.0. If you need
 a version that is compatible with MMD 2.0, you can choose an older version
 from the [downloads] page. MMD 3.0 must be installed separately.*

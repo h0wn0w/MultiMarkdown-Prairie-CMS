@@ -21,14 +21,12 @@ h1 {
 h2 {
     font-size: 1.5em;
     /*margin: 0.83em 0;*/
-    cursor: pointer;
 }
 
 h3 {
     font-size: 1.17em;
-    padding-left: 1.0em;
+    padding: 1.0em;
     /*margin: 1em 0;*/
-    cursor: pointer;
 }
 
 h4 {
@@ -49,17 +47,6 @@ h6 {
 img {
 }
 
-aside {
-  float: right;
-  clear: right;
-  width: 16em;
-  z-index: -1;
-  padding: 10px 10px 0px 0px;
-  margin-top: 30px;
-  /*margin-top: -12.5em;*/
-}
-
-
 footer {
   width: 100%;
   height: 120px;
@@ -72,7 +59,7 @@ header {
   background: #ffe793;
   border-bottom: 10px solid #ffde7d;
   color: #2e2d2b;
-  text-align: center;
+  /*text-align: center;*/
 }
 
 nav > a {

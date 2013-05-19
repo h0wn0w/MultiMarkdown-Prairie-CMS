@@ -1,7 +1,7 @@
-Title:	Test Category  
-Date:	02/03/2010 14:51:09 
-Tags:	
+Title:	Categories  
+Date:	05/19/2013 
+Tags:	Directory
 
 
-This page represents a "category." There should be an entry below for a page
-in a subfolder.
+This page represents a "category." There are entries below for pages
+in subfolders. These subfolders are one level down the tree; however, directories can be nested further, creating additional "subcategories."
