@@ -14,7 +14,7 @@
     </div><!-- end wrap -->
 
 <!-- <div class="footer"> -->
-<footer>
+<footer class="footer-yellow">
 This site created with the <a href="http://fletcherpenney.net/multimarkdown/cms/">MultiMarkdown-Prairie CMS</a>
 </footer>
 <!-- </div> end footer -->
@@ -22,3 +22,10 @@ This site created with the <a href="http://fletcherpenney.net/multimarkdown/cms/
 	<!-- jQuery if you want it -->
 	<script type="text/javascript" language="Javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
 	<script type="text/javascript" language="Javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+	<script>
+	$('button').click(function(){
+		$('header').toggleClass('header-red'),
+		$('footer').toggleClass('footer-red');
+		});
+	</script>

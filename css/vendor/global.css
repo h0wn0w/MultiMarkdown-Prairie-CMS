@@ -67,10 +67,13 @@ img, embed, object, video { max-width: 100%; }
 /* 3. CORE TYPOGRAPHY
 ----------------------------------------------------------------------------------------*/
 body {
-  font-family: Georgia, "Times New Roman", serif;
+  /*font-family: Georgia, "Times New Roman", serif;*/
+  font-family: "Helvetica" sans-serif;
   font-size: 1em;
   line-height: 1.618em;
-  color: #333;
+  /*color: #333;*/
+  background-color: #eee;
+  color: #2e2d2b;
   }
 
 h1, h2, h3, h4, h5, h6 {
@@ -105,11 +108,11 @@ a:active, a:focus { outline: none; }
 ----------------------------------------------------------------------------------------*/
 header {
   padding: 1.0em;
-  text-align: left;
+  text-align: center;
 }
 
 footer {
-  padding: 1.0em;
+  /*padding: 1.0em;*/
   text-align: center;
 }
 
@@ -133,6 +136,8 @@ title {
     height: 100%;
     /* Negative indent footer by it's height */
     margin: 0 auto -60px;
+    background: #eee;
+    color: #2e2d2b;
   }
 
   /* Set the fixed height of the footer here */
@@ -155,7 +160,8 @@ title {
 ----------------------------------------------------------------------------------------*/
 #container {
     padding: 0.809em;
-    max-width: 30em;
+    /*max-width: 30em;*/
+    max-width: 35em;
     margin: auto;
   }
 

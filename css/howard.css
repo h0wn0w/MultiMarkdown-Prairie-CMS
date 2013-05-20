@@ -8,8 +8,8 @@ howard's css. that's right.
 ======================================== */
 
 body {
-  background: #eee;
-  color: #2e2d2b;
+/*  background: #eee;
+  color: #2e2d2b;*/
 }
 
 h1 {
@@ -25,7 +25,6 @@ h2 {
 
 h3 {
     font-size: 1.17em;
-    padding: 1.0em;
     /*margin: 1em 0;*/
 }
 
@@ -50,15 +49,15 @@ img {
 footer {
   width: 100%;
   height: 120px;
-  background: #1f1f1f;
+  /*background: #1f1f1f;
   border-top: 20px solid #2e2d2b;
-  color: #eee;
+  color: #eee;*/
 }
 
 header {
-  background: #ffe793;
+  /*background: #ffe793;
   border-bottom: 10px solid #ffde7d;
-  color: #2e2d2b;
+  color: #2e2d2b;*/
   /*text-align: center;*/
 }
 
@@ -80,14 +79,6 @@ nav > ul > li > ul > li > a {
 
 [class^="icon-"], [class*=" icon-"] {
   padding: 10px 10px;
-}
-
-.acc1 {
-
-}
-
-.acc2 {
-
 }
 
 .dropdown-group {
@@ -140,6 +131,36 @@ nav > ul > li > ul > li > a {
   }
 }
 
+/* Yellow Theme 
+===================================== */
+
+.header-yellow {
+  background: #ffe793;
+  border-bottom: 10px solid #ffde7d;
+  color: #2e2d2b;
+}
+
+.footer-yellow {
+  background: #1f1f1f;
+  border-top: 20px solid #2e2d2b;
+  color: #eee;
+}
+
+/* Red Theme 
+===================================== */
+
+.header-red {
+  background: #a72218;
+  border-bottom: 10px solid #d32114;
+  color: #2e2d2b;
+}
+
+.footer-red {
+  background: #1f1f1f;
+  border-top: 20px solid #c9c6c5;
+  color: #eee;
+}
+
 /* IDs
 ========================================*/
 
@@ -147,14 +168,5 @@ nav > ul > li > ul > li > a {
   font-family: 'Quicksand', sans-serif;
   font-weight: 400;
   /*font-size: 24px;*/
-}
-
-#curriculum {
-  font-family: 'Alegreya', serif;
-  font-weight: 400;
-}
-
-#curriculum p {
-  padding-left: 2.3em;
 }
 
