@@ -2,33 +2,45 @@
 ----------------------------------------------------------------------------------------*/
 #container {
 	padding: 1.618em;
-	margin: 0 auto; 
+	margin: 1.0em auto; 
 	max-width: 60em;
   /*width: 33em;*/
 	}
 
 .right {
+  padding: 0em 1.0em 0em 1.0em;
+  position: relative;
   float: right;
   clear: right;
   width: 16em;
-  z-index: -1;
-  /*padding: 10px 10px 0px 0px;*/
+  z-index: 1;
   /*margin-top: 30px;*/
-  margin-top: 1.0em;
+  /*margin-top: 1.0em;*/
 }
 
 .left {
+  padding: 0em 1.0em 0em 1.0em;
+  position: relative;
   float: left;
   clear: left;
   width: 16em;
-  z-index: -1;
-  padding: 10px 0px 0px 10px;
+  z-index: 1;
   /*margin-top: 30px;*/
-  margin-top: 12.5em;
+  /*margin-top: 12.5em;*/
 }
 
 .right > h3 {
   padding-top: 1.5em;
+}
+
+aside {
+  /*float: right;
+  clear: right;*/
+  width: 25em;
+  margin: 2.6em auto; 
+  /*margin-top: 1.0em;*/
+  padding-top: 1.618em;
+  height:100%;
 }
 
 
