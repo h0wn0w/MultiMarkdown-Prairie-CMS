@@ -4,6 +4,8 @@ Tags:                   Typography, Project
 
 # MultiMarkdown CMS Typography Examples #
 
+***
+
 ## Headings ##
 
 # Here's an H1 #
@@ -18,6 +20,7 @@ Tags:                   Typography, Project
 
 ###### Here's an H6 ######
 
+***
 
 ## Phrase Emphasis ##
 
@@ -25,6 +28,7 @@ Here is some **strong** text.
 
 Here is *some text that we want to emphasize.*
 
+***
 
 ## Blockquotes ##
 
@@ -35,11 +39,15 @@ Blockquoting example:
 
 > Back to the first level
 
+***
+
 ## Code ##
 
 Use backticks for code, like this:
 
 `cd /foo/bar/`
+
+***
 
 ## Images ##
 
@@ -51,6 +59,8 @@ An image placeholder
 
 Definitions
 :   A description of the meaning of the word.
+
+***
 
 ## List Elements ##
 
@@ -85,6 +95,8 @@ Add the `list` classes to an ordered list element to apply these styles.
 6. Faucibus porta lacus fringilla vel
 7. Aenean sit amet erat nunc
 8. Eget porttitor lorem
+
+***
 
 ## Tables ##
 

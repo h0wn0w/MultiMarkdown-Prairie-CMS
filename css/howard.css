@@ -1,77 +1,13 @@
 /*
-
 howard's css. that's right. 
-
 */
 
 /* Elements
 ======================================== */
 
-body {
-/*  background: #eee;
-  color: #2e2d2b;*/
-}
-
-h1 {
-    font-size: 2em;
-    line-height:1.4em;
-    /*margin: 0.67em 0;*/
-}
-
-h2 {
-    font-size: 1.5em;
-    /*margin: 0.83em 0;*/
-}
-
-h3 {
-    font-size: 1.17em;
-    /*margin: 1em 0;*/
-}
-
-h4 {
-    font-size: 1em;
-    /*margin: 1.33em 0;*/
-}
-
-h5 {
-    font-size: 0.83em;
-    /*margin: 1.67em 0;*/
-}
-
-h6 {
-    font-size: 0.67em;
-    /*margin: 2.33em 0;*/
-}
-
-img {
-}
-
-footer {
-  width: 100%;
-  height: 120px;
-  /*background: #1f1f1f;
-  border-top: 20px solid #2e2d2b;
-  color: #eee;*/
-}
-
-header {
-  /*background: #ffe793;
-  border-bottom: 10px solid #ffde7d;
-  color: #2e2d2b;*/
-  /*text-align: center;*/
-}
-
 nav > a {
-  padding: 0px 5px;
-}
-
-nav > ul > li > ul > li > a {
-  display: inline;
-  background: #ffde7d; 
-}
-
-:focus {
-  outline: none;
+  padding: 0px 10px;
+  font-size: 1.5em;
 }
 
 /* Classes
@@ -161,6 +97,19 @@ nav > ul > li > ul > li > a {
   color: #eee;
 }
 
+/* Default Theme
+===================================== */
+
+.header-default {
+  border-bottom: 10px solid #d32114;
+  color: #2e2d2b;
+}
+
+.footer-default {
+  border-top: 20px solid #c9c6c5;
+  color: #eee;
+}
+
 /* IDs
 ========================================*/
 
@@ -168,5 +117,9 @@ nav > ul > li > ul > li > a {
   font-family: 'Quicksand', sans-serif;
   font-weight: 400;
   /*font-size: 24px;*/
+}
+
+#themes li {
+  list-style: none;
 }
 

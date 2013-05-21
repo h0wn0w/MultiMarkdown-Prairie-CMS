@@ -9,7 +9,6 @@
 
 
 </div> <!-- end container -->
-
 <div id="push"></div>
     </div><!-- end wrap -->
 
@@ -24,8 +23,36 @@ This site created with the <a href="http://fletcherpenney.net/multimarkdown/cms/
 	<script type="text/javascript" language="Javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
 	<script>
-	$('button').click(function(){
-		$('header').toggleClass('header-red'),
-		$('footer').toggleClass('footer-red');
-		});
+	$('#red').click(function(){
+		var $addhead = $('header').addClass
+		var $addfoot = $('footer').addClass
+		// var $switchhead = $('header').switchClass
+		// var $switchfoot = $('footer').switchClass
+		if ($('header').hasClass('header-yellow')) {
+			$('header').switchClass('header-yellow', 'header-red'),
+			$('footer').switchClass('footer-yellow', 'footer-red');
+		} else {
+			$addhead('header-red', true),
+			$addfoot('footer-red', true);
+		}
+	}),
+
+	$('#yellow').click(function(){
+		if ($('header').hasClass('header-red')) {
+			$('header').switchClass('header-red', 'header-yellow'),
+			$('footer').switchClass('footer-red', 'footer-yellow');
+		} else {
+			$addhead('header-yellow', true),
+			$addfoot('footer-yellow', true);
+		}
+	}),
+
+	$('#default').click(function(){
+		if ($('header').hasClass(('header-red' || 'header-yellow'))) {
+			$('header').removeClass(('header-red' || 'header-yellow'));
+		} else {
+			$addhead('header-default', true),
+			$addfoot('footer-default', true);
+		}
+	});
 	</script>
