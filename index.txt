@@ -7,4 +7,3 @@ System. This is a fork of the original MMD CMS, which was developed by Fletcher 
 Learn more about the original MultiMarkdown CMS at <http://fletcherpenney.net/multimarkdown/cms/>.
 
 <!--#include virtual="cgi/latest_stories.cgi" -->
-<!--#include virtual="cgi/pages_at_root.cgi" -->
