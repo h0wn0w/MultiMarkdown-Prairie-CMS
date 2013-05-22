@@ -18,6 +18,8 @@
 */
 
 @import "layout.css";		/* Import layout code */
+@import "global.css"; 
+@import "howard.css";
 
 /* Default Settings */
 

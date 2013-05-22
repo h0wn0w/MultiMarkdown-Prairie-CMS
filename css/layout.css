@@ -1,75 +1,104 @@
-body {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  min-width: 60em;
-  text-align: center;
+/* 7. CUSTOM LAYOUT & TYPOGRAPHY (multicolumn)
+----------------------------------------------------------------------------------------*/
+
+@media screen and (min-width: 50em) {
+
+article {
+  float: none;
+  width: 32em;
 }
-div { text-align: left; }
-.header {
-  background-position: -10px 0px;
-  position: relative;
+
+aside {
+  float: right;
+  clear: right;
+  width: 16em;
+  z-index: -1;
   padding: 10px 10px 0px 10px;
-  max-width: 60em;
-  margin: 1.75em auto 0em auto;
+  margin-top: 1.0em;
 }
-.wrapper {
-  position: relative;
-  width: 100%;
-  min-width: 59em;
-  clear: both;
-  overflow: hidden;
-  max-width: 59em;
-  margin: 0 auto;
-  margin-bottom: 1.75em;
-}
-.innerwrapper {
-  float: left;
-  width: 200%;
-  position: relative;
-}
-.contentwrapper {
-  position: relative;
-  padding-bottom: 1em;
-}
-.content {
-  max-width: 35em;
-  overflow: hidden;
-  margin: 0 2.5em 0 16.5em;
-}
-.sidebar {
-  width: 14em;
-  position: relative;
-}
-.footer {
-  clear: both;
-  float: left;
-  width: 100%;
-  min-width: 59em;
-  font-size: 0.75em;
-}
-.rightmenu .innerwrapper {
-  margin-left: -14em;
-  right: 100%;
-}
-.rightmenu .contentwrapper {
-  float: left;
-  left: 50%;
-}
-.rightmenu .sidebar {
+
+.container {
+	padding: 1.618em;
+	margin: 0 auto; 
+	width: 50em;
+  /*width: 33em;*/
+  z-index: auto;
+	}
+
+/*.right {
   float: right;
-  left: 11.5em;
-}
-.leftmenu .innerwrapper { left: 19em; }
-.leftmenu .contentwrapper {
-  float: right;
-  right: 24em;
-}
-.leftmenu .content {
-  position: relative;
-  right: 100%;
-}
-.leftmenu .sidebar {
+  clear: right;
+}*/
+
+.left {
   float: left;
-  right: 16.5em;
+  clear: left;
+}
+
+.right > h3 {
+  padding-top: 1.5em;
+}
+}
+
+
+/* 8. CUSTOM LAYOUT & TYPOGRAPHY (Mummy bear)
+----------------------------------------------------------------------------------------*/
+@media screen and (min-width: 30em) and (max-width: 53.236em) {
+
+article {
+  float: none;
+  width: 28em;
+}
+
+.container { 
+  margin: 0 auto; 
+  width: 30em; 
+  max-width: 36em;
+  /*z-index: auto; */
+}
+
+/*.left, .right {
+  float: none;
+  clear: both;
+  width: auto;
+  height: auto;
+  margin: 0 0 2.2em;
+}*/
+
+aside {
+  float: none;
+  clear: both;
+  width: auto;
+  height: auto;
+  margin: 0 0 2.2em;
+}
+}
+
+/* 9. CUSTOM LAYOUT & TYPOGRAPHY (single column)
+----------------------------------------------------------------------------------------*/
+@media screen and (max-width: 30em) {
+
+article {
+  float: none;
+  width: auto;
+}
+
+.container {
+    padding: 0.809em;
+    max-width: 30em;
+    /*max-width: 35em;*/
+    margin: auto;
+    z-index: auto;
+  }
+
+/*.left, .right { 
+  max-width: 100%;
+  float: none; 
+}*/
+
+aside { 
+  max-width: 100%;
+  float: none; 
+}
+
 }

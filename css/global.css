@@ -1,0 +1,243 @@
+/*
+Goldilocks Approach to Responsive Web Design Boilerplate
+
+Author: Design by Front - @designbyfront
+Version: 0.1
+URL: http://www.goldilocksapproach.com
+----------------------------------------------------------------------------------------
+
+CONTENTS - GLOBAL.CSS
+-----------------------------------------
+1. RESET
+2. ROOT
+3. CORE TYPOGRAPHY
+4. LINKS
+5. GLOBAL LAYOUT & GLOBAL CUSTOM TYPOGRAPHY
+6. CUSTOM LAYOUT & TYPOGRAPHY (Baby bear)
+7. BROWSER AND NON-SEMANTIC STYLING
+
+CONTENTS - LAYOUT.CSS
+-----------------------------------------
+8. CUSTOM LAYOUT & TYPOGRAPHY (Daddy bear)
+9. CUSTOM LAYOUT & TYPOGRAPHY (Mummy bear)
+
+*/
+
+
+/* 1. RESET
+----------------------------------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size:100%;
+  font: inherit;
+  vertical-align: baseline;
+  }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+  }
+  
+  
+/* 2. ROOT
+----------------------------------------------------------------------------------------*/
+html { 
+  overflow-y: scroll;
+  background: #FFF;
+  }
+
+/* /ht Ethan Marcotte - http://front.ie/l8rJaA */
+img, embed, object, video { max-width: 100%; }
+.ie6 img.full, .ie6 object.full, .ie6 embed, .ie6 video { width: 100%; }
+
+
+/* 3. CORE TYPOGRAPHY
+----------------------------------------------------------------------------------------*/
+body {
+  /*font-family: Georgia, "Times New Roman", serif;*/
+  font-family: "Helvetica" sans-serif;
+  font-size: 1em;
+  line-height: 1.618em;
+  /*color: #333;*/
+  background-color: #eee;
+  color: #2e2d2b;
+  }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.809em;
+  line-height: 1em;
+  }
+
+p, ul, ol, dl, blockquote {
+    font-size: 1em;
+    line-height: 1.618em;
+    margin-bottom: 1.618em; 
+    max-width: 30em; /* Optimal width for long-form text */
+  }
+    
+ul { list-style-type: disc; margin-left: 1.618em; }
+ol { list-style-type: decimal; margin-left: 1.618em; }
+nav ul, nav ol { list-style: none; margin: 0; padding: 0;}
+
+b, strong { font-weight: bold; }
+i, em { font-style: italic; }
+small { font-size: 80%; }
+
+
+/* 4. LINKS
+----------------------------------------------------------------------------------------*/
+a, a:visited {
+  outline: none;
+  /*color: #439BBD; */
+  color: #1f1f1f;
+  border-bottom: 1px dashed #888888;
+  text-decoration: none; 
+}  
+
+a:hover { 
+  /*outline: none; 
+  text-decoration:none; */
+  color: #ffffff;
+  background: #222222;
+}  
+
+a:active, a:focus { 
+  outline: none; 
+}
+
+footer a {
+  color: #439BBD;
+}
+
+
+/* 5. GLOBAL LAYOUT & GLOBAL CUSTOM TYPOGRAPHY
+----------------------------------------------------------------------------------------*/
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 0.83em 0;
+}
+
+h3 {
+    font-size: 1.17em;
+    margin: 1em 0;
+}
+
+h4 {
+    font-size: 1em;
+    margin: 1.33em 0;
+}
+
+h5 {
+    font-size: 0.83em;
+    margin: 1.67em 0;
+}
+
+h6 {
+    font-size: 0.67em;
+    margin: 2.33em 0;
+}
+
+header {
+  padding: 1.0em;
+  text-align: center;
+}
+
+footer {
+  width: 100%;
+  height: 120px;
+  text-align: center;
+}
+
+title {
+  font-size: 2.5em;
+}
+
+:focus {
+  outline: none;
+}
+
+code,kbd {
+  font-family:monospace,serif;
+  _font-family:'courier new',monospace;
+  font-size:1em;
+  padding:0.1em 0.25em; 
+  background:#dddddd;
+  /*border:1px solid #990000;
+  border-radius: 0.25em;*/
+}
+
+pre {
+  padding: 1.0em 0.25em;
+  background:#dddddd;
+  white-space:pre;
+  white-space:pre-wrap;
+  word-wrap:break-word
+}
+
+/*tables tables tables  - minified and hard to read
+  courtesy of [Brett Terpstra](http://www.brettterpstra.com)
+  ========================================= */
+
+  table{border-collapse:collapse;border-spacing:0}table{margin-bottom:2em;padding:0;font-size:14px;border-collapse:collapse;-webkit-box-shadow:1px 1px 2px rgba(0,0,0,0.35);-moz-box-shadow:1px 1px 2px rgba(0,0,0,0.35);box-shadow:1px 1px 2px rgba(0,0,0,0.35);width:70%;margin:0 auto 2em auto;border:1px solid #ddd;border-collapse:separate;*border-collapse:collapse;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}table caption,table col,table colgroup,table table,table tbody,table td,table tfoot,table th,table thead,table tr{border-spacing:0;font-family:'News Cycle', sans-serif;font-weight:400;font-size:24px}table caption{display:table-caption;font-weight:700;font-size:12px;text-transform:uppercase;font-family:'News Cycle', sans-serif;background:rgba(22,22,22,0.75);color:#EEE;padding:8px 4px;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;margin:4px 0;-webkit-box-shadow:2px 2px 2px rgba(0,0,0,0.35);-moz-box-shadow:2px 2px 2px rgba(0,0,0,0.35);box-shadow:2px 2px 2px rgba(0,0,0,0.35)}table col{display:table-column}table colgroup{display:table-column-group}table tbody{display:table-row-group}table tfoot{display:table-footer-group}table th,table td{padding:10px 10px 9px;line-height:18px;text-align:left}table th{padding-top:9px;font-family:'News Cycle', sans-serif;font-size:14px;font-weight:700!important;text-transform:uppercase;vertical-align:middle;text-align:center}table td{vertical-align:top;border-top:1px solid #ddd;font-family:'News Cycle', sans-serif;font-size:14px!important}table tbody th{border-top:1px solid #ddd;vertical-align:top}table th+th,table td+td,table th+td{border-left:1px solid #ddd}table thead tr:first-child th:first-child,table tbody tr:first-child td:first-child{-webkit-border-radius:4px 0 0 0;-moz-border-radius:4px 0 0 0;border-radius:4px 0 0 0}table thead tr:first-child th:last-child{-webkit-border-radius:0 4px 0 0;-moz-border-radius:0 4px 0 0;border-radius:0 4px 0 0}table tr:nth-child(odd),table th:nth-child(odd),table td:nth-child(odd){background:rgba(255,255,255,0.06)}table tr:nth-child(even),table td:nth-child(even){background:rgba(0,0,0,0.06)}table tbody tr:first-child td:last-child{-webkit-border-radius:0 4px 0 0;-moz-border-radius:0 4px 0 0;border-radius:0 4px 0 0}table tbody tr:last-child td:first-child{-webkit-border-radius:0 0 0 4px;-moz-border-radius:0 0 0 4px;border-radius:0 0 0 4px}table tbody tr:last-child td:last-child{-webkit-border-radius:0 0 4px 0;-moz-border-radius:0 0 4px 0;border-radius:0 0 4px 0}table tbody tr:nth-child(odd){background-color:rgba(0,0,0,0.03)}
+
+/* Sticky footer by 
+[Martin Bean](http://martinbean.co.uk) and [Ryan Fait](http://ryanfait.com/sticky-footer/)
+========================================= */
+
+  html,
+  body {
+    height: 100%;
+    /* The html and body elements cannot have any padding or margin. */
+  }
+
+
+  /* Wrapper for page content to push down footer */
+  #wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -60px;
+    background: #eee;
+    color: #2e2d2b;
+  }
+
+  /* Set the fixed height of the footer here */
+  #push,
+  #footer {
+    height: 60px;
+  }
+  
+  /* Lastly, apply responsive CSS fixes as necessary */
+  @media (max-width: 767px) {
+    #footer {
+      margin-left: -20px;
+      margin-right: -20px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+/* 6. BROWSER AND NON-SEMANTIC STYLING
+----------------------------------------------------------------------------------------*/
+.cf:before, .cf:after { content: ""; display: block; }
+.cf:after { clear: both; }
+.ie6 .cf { zoom: 1 }
