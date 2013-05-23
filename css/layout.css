@@ -42,7 +42,7 @@
 
   .container { 
     margin: 0 auto; 
-    width: 30em; 
+    width: 28em; 
     max-width: 36em;
     /*z-index: auto; */
   }
@@ -66,12 +66,12 @@
 
 article {
   float: none;
-  width: auto;
+  max-width: 28em;
 }
 
 .container {
     padding: 0.809em;
-    max-width: 30em;
+    max-width: 28em;
     /*max-width: 35em;*/
     margin: auto;
     z-index: auto;

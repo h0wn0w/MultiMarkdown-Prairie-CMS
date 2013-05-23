@@ -3,18 +3,175 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 	
-	<title>Gallery</title>
+	<title>Typography</title>
 	<meta name="date" content="05/19/2013">
-	<meta name="tags" content="MultiMarkdown, Images">
+	<meta name="tags" content="Typography, Projects">
 <!--#include virtual="${Base_URL}/templates/head.html" --></head>
-<body><!--#include virtual="${Base_URL}/templates/header.html" --><h1 class="page-title">Gallery</h1>
+<body><!--#include virtual="${Base_URL}/templates/header.html" --><h1 class="page-title">Typography</h1>
 <div class="date">05/19/2013</div><!--#include virtual="${Base_URL}/cgi/tags.cgi" -->
 
-<p>MultiMarkdown also handles images. </p>
+<h1 id="multimarkdowncmstypographyexamples">MultiMarkdown CMS Typography Examples</h1>
 
-<p>Here&#8217;s one image <img src="../../images/Falcon_small.png" alt="1" id="1" title="Falcon"> </p>
+<hr>
 
-<p>And here&#8217;s another <img src="../../images/Scroll.png" alt="2" id="2" title="Scroll"> </p>
+<h2 id="headings">Headings</h2>
+
+<h1 id="heresanh1">Here&#8217;s an H1</h1>
+
+<h2 id="heresanh2">Here&#8217;s an H2</h2>
+
+<h3 id="heresanh3">Here&#8217;s an H3</h3>
+
+<h4 id="heresanh4">Here&#8217;s an H4</h4>
+
+<h5 id="heresanh5">Here&#8217;s an H5</h5>
+
+<h6 id="heresanh6">Here&#8217;s an H6</h6>
+
+<hr>
+
+<h2 id="phraseemphasis">Phrase Emphasis</h2>
+
+<p>Here is some <strong>strong</strong> text.</p>
+
+<p>Here is <em>some text that we want to emphasize.</em></p>
+
+<hr>
+
+<h2 id="blockquotes">Blockquotes</h2>
+
+<p>Blockquoting example:</p>
+
+<blockquote>
+<p>Typography is the craft of endowing human language with a durable visual form. Anonymous</p>
+
+<blockquote>
+<p>A nested blockquote</p>
+</blockquote>
+
+<p>Back to the first level</p>
+</blockquote>
+
+<hr>
+
+<h2 id="code">Code</h2>
+
+<p>Use backticks for code, like this:</p>
+
+<p><code>cd /foo/bar/</code></p>
+
+<hr>
+
+<h2 id="images">Images</h2>
+
+<p>An image placeholder</p>
+
+<figure>
+<img src="http://placehold.it/350x350" alt="">
+<figcaption></figcaption></figure>
+
+<h3 id="definitionlists">Definition Lists</h3>
+
+<dl>
+<dt>Definitions</dt>
+<dd>A description of the meaning of the word.</dd>
+</dl>
+
+<hr>
+
+<h2 id="listelements">List Elements</h2>
+
+<h3 id="unorderedlistulstyling">Unordered List (<code>Ul</code>) Styling</h3>
+
+<ul>
+<li>Lorem ipsum dolor sit amet</li>
+<li>Consectetur adipiscing elit</li>
+<li>Integer molestie lorem at massa</li>
+<li>Facilisis in pretium nisl aliquet</li>
+<li>Nulla volutpat aliquam velit
+
+<ul>
+<li>Phasellus iaculis neque</li>
+<li>Purus sodales ultricies</li>
+<li>Vestibulum laoreet porttitor sem</li>
+<li>Ac tristique libero volutpat at</li>
+</ul>
+</li>
+<li>Faucibus porta lacus fringilla vel</li>
+<li>Aenean sit amet erat nunc</li>
+<li>Eget porttitor lorem</li>
+</ul>
+
+<h3 id="orderedlistolstyling">Ordered List (<code>Ol</code>) Styling</h3>
+
+<p>Add the <code>list</code> classes to an ordered list element to apply these styles.</p>
+
+<ol>
+<li>Lorem ipsum dolor sit amet</li>
+<li>Consectetur adipiscing elit</li>
+<li>Integer molestie lorem at massa</li>
+<li>Facilisis in pretium nisl aliquet</li>
+<li>Nulla volutpat aliquam velit
+
+<ol>
+<li>Phasellus iaculis neque</li>
+<li>Purus sodales ultricies</li>
+<li>Vestibulum laoreet porttitor sem</li>
+<li>Ac tristique libero volutpat at</li>
+</ol>
+</li>
+<li>Faucibus porta lacus fringilla vel</li>
+<li>Aenean sit amet erat nunc</li>
+<li>Eget porttitor lorem</li>
+</ol>
+
+<hr>
+
+<h2 id="tables">Tables</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:center;">
+<col style="text-align:right;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"></th>
+	<th style="text-align:center;" colspan="2">Grouping</th>
+</tr>
+<tr>
+	<th style="text-align:left;">First Header</th>
+	<th style="text-align:center;">Second Header</th>
+	<th style="text-align:right;">Third Header</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">Content</td>
+	<td style="text-align:center;" colspan="2"><em>Long Cell</em></td>
+</tr>
+<tr>
+	<td style="text-align:left;">Content</td>
+	<td style="text-align:center;"><strong>Cell</strong></td>
+	<td style="text-align:right;">Cell</td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">New section</td>
+	<td style="text-align:center;">More</td>
+	<td style="text-align:right;">Data</td>
+</tr>
+<tr>
+	<td style="text-align:left;">And More</td>
+	<td style="text-align:center;" colspan="2">And More</td>
+</tr>
+</tbody>
+</table>
 
 <!--#include virtual="${Base_URL}/templates/footer.html" --></body>
 </html>
