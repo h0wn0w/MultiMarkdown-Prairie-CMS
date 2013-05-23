@@ -88,7 +88,10 @@ nav > a {
 .header-red {
   background: #a72218;
   border-bottom: 10px solid #d32114;
-  color: #2e2d2b;
+}
+
+.header-red > nav > a {
+  color: #eaeaea;  
 }
 
 .footer-red {

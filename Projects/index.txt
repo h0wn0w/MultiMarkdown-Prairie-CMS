@@ -2,10 +2,12 @@ Title:				Projects
 Date:				05/19/2013 
 Tags:				Projects, Work
 
-Thank you for visiting example.com!  
+Thank you for visiting Acme Co.  
 
-## Completed and Upcoming Projects ##
+Below is a list of recently completed projects. 
+
+## Projects Portfolio ##
 
 1. First Project 
-2. The Best One Ever
-3. Superman's Cape
+2. Second Project
+3. Third Project

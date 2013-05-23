@@ -1,5 +1,6 @@
 .htaccess
-boot.*
 .DS_Store
+boot.*
+humans.txt
 Prairie.sublime-workspace
 Prairie.sublime-project
