@@ -89,17 +89,17 @@ It really does make a difference!
 
 # CSS #
 
-The CSS for this site is broken into separate files in order to better
-differentiate the different components. One file applies the typography
-techniques mentioned above; one applies colors; one applies the decorations
-and branding; one manages the overall page layout; one applies code to base
-the appearance of tables on that produced by the
-[booktabs](http://www.ctan.org/tex-archive/macros/latex/contrib/booktabs/)
-package for LaTeX.
+The CSS for this site is broken into separate files in order to better differentiate the different components. 
 
-Of course, this is all moot if you are using IE to view this site. In that
-case, I take no responsibility for the way things look on your screen. Treat
-yourself: use a [real browser](http://www.mozilla.com/firefox/)....
+One file applies the global typography.
+
+One uses media queries to apply different layouts based on the `em` width of the device used to render this site. This means that the MultiMarkdown CMS is about as device-agnostic as it can be.  
+
+Another applies colors and can be used for other custom layouts and typography.
+
+A final file calls each of the other three and defines other global and/or custom CSS.
+
+Of course, this is all moot if you are using IE to view this site. In that case, I take no responsibility for the way things look on your screen. Treat yourself: use a [real browser](http://www.mozilla.com/firefox/)....
 
 # Legal Info #
 

@@ -44,9 +44,7 @@ This package certainly requires more tinkering than a prebuilt solution. If you'
 # Where do I get it? #
 
 
-You can download the package: 
-
-<http://github.com/fletcher/MultiMarkdown-CMS> 
+You can [download the package](http://github.com/fletcher/MultiMarkdown-CMS). 
 
 You can also use git to clone the source: 
 
