@@ -1,0 +1,111 @@
+Title: Colophon
+Date: May 22, 2013
+Tags: MultiMarkdown, Movable Type, web, server, typography, css
+
+# Overview #
+
+This site is now created solely with [MultiMarkdown](/multimarkdown/). The
+plain text source files, e.g. [here](/multimarkdown/index.txt), are processed
+with MultiMarkdown into XHTML files. The XHTML files use a few templates and
+[Server Side Includes](http://httpd.apache.org/docs/1.3/howto/ssi.html) to
+create a consistent layout and to automatically link to other pages in various
+subdirectories. I use some cgi scripts to handle authentication via
+[OpenID](http://openid.net/) Everything is uploaded to my server via
+[git](http://git-scm.com/).
+
+Previously, I have used [Oddmuse](http://www.oddmuse.org/) and subsequently
+[Movable Type](http://www.movabletype.org/) to generate this site. I finally
+realized that each of those programs was essentially just putting a wrapper
+around my MultiMarkdown content which was the core of each page. I describe a
+bit more how I transitioned from other software
+[here](/2009/09/multimarkdown_as_cms).
+
+# MultiMarkdown #
+
+The content of this site is written using the [MultiMarkdown](/multimarkdown/)
+syntax, and then converted to XHTML. I also use
+[SmartyPants](http://daringfireball.net/projects/smartypants/) to simplify
+making the content "typographically correct." A custom
+[XSLT](http://www.w3schools.com/xsl/) file modifies the plain XHTML output
+from MultiMarkdown to include a few templates and scripts to allow for proper
+page formatting (e.g. the sidebar, header, and footer).
+
+
+# Hosting #
+
+Hosted by [NearlyFreeSpeech.NET](https://www.nearlyfreespeech.net/). They
+offer a unique pricing plan based purely on the actual storage space and
+bandwidth used, with no monthly fees.
+
+However, I also make use of Amazon's [S3](http://aws.amazon.com/s3/) service
+for hosting larger files. The bandwidth and storage costs are *much* lower,
+but the performance is supposedly not quite good enough to act as your sole
+web server (though that is actually possible for static pages...) Basically,
+my web site (which has both static and dynamic pages) will be hosted with
+NFSN, while images and files for download will be hosted at S3.
+
+This does mean that my bandwidth and storage is no longer free (or more
+precisely, paid for), but the added flexibility should be worth it. (Donations
+to keep things running are certainly welcome!)
+
+# Apache #
+
+NearlyFreeSpeech.NET uses Apache as their server software. I have modified my
+.htaccess file to send the proper Mime-type to each browser, since certain
+popular but crappy browsers still have trouble keeping up with last generation
+web standards (*cough* IE *cough*). With thanks to
+[bitworking](http://bitworking.org/news/134/Content-Negotiation-Considered-Harmful-Again).
+
+	RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml
+	RewriteCond %{HTTP_ACCEPT} !application/xhtml\+xml\s*;\s*q=0\.?0*(\s|,|$)
+	RewriteCond %{REQUEST_URI} \.html$
+	RewriteRule .* - [T=application/xhtml+xml;charset=UTF-8]
+	RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml
+	RewriteCond %{HTTP_ACCEPT} !application/xhtml\+xml\s*;\s*q=0\.?0*(\s|,|$)
+	RewriteCond %{REQUEST_URI} !\.
+	RewriteRule .* - [T=application/xhtml+xml;charset=UTF-8]
+
+If you are unfortunate enough to have to use such a browser, recognize that
+this site will not look as it is supposed to....
+
+# Email #
+
+Email is provided by [Google Apps](http://www.google.com/a/). For more
+information on how to use Google's email services, see
+[Using Gmail and Postfix](/2008/08/using_gmail_and_postfix).
+
+# Typography #
+
+I've tried to apply some principles of well thought out typography to this
+site, using the following references:
+
+* [Five simple steps to better typography](http://www.markboulton.co.uk/journal/comments/five_simple_steps_to_better_typography)
+
+* [Web Typography Sucks](http://webtypography.net/sxsw2007/)
+
+* To see examples of this site's default typographical styles, please see the [Typography page](../category/Typography/).
+
+It really does make a difference!
+
+# CSS #
+
+The CSS for this site is broken into separate files in order to better
+differentiate the different components. One file applies the typography
+techniques mentioned above; one applies colors; one applies the decorations
+and branding; one manages the overall page layout; one applies code to base
+the appearance of tables on that produced by the
+[booktabs](http://www.ctan.org/tex-archive/macros/latex/contrib/booktabs/)
+package for LaTeX.
+
+Of course, this is all moot if you are using IE to view this site. In that
+case, I take no responsibility for the way things look on your screen. Treat
+yourself: use a [real browser](http://www.mozilla.com/firefox/)....
+
+# Legal Info #
+
+The content of this web site, unless otherwise specified, is licensed under a
+[Creative Commons License](http://creativecommons.org/licenses/by-nc-sa/3.0/us/)
+by Fletcher T. Penney.
+
+Most of my software is released under the [GNU General Public License](http://www.gnu.org/copyleft/gpl.html). See the individual files for
+more information.

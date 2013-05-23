@@ -1,0 +1,122 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+	
+	<title>Colophon</title>
+	<meta name="date" content="May 22, 2013">
+	<meta name="tags" content="MultiMarkdown, Movable Type, web, server, typography, css">
+<!--#include virtual="${Base_URL}/templates/head.html" --></head>
+<body><!--#include virtual="${Base_URL}/templates/header.html" --><h1 class="page-title">Colophon</h1>
+<div class="date">May 22, 2013</div><!--#include virtual="${Base_URL}/cgi/tags.cgi" -->
+
+<h1 id="overview">Overview</h1>
+
+<p>This site is now created solely with <a href="/multimarkdown/">MultiMarkdown</a>. The
+plain text source files, e.g. <a href="/multimarkdown/index.txt">here</a>, are processed
+with MultiMarkdown into XHTML files. The XHTML files use a few templates and
+<a href="http://httpd.apache.org/docs/1.3/howto/ssi.html">Server Side Includes</a> to
+create a consistent layout and to automatically link to other pages in various
+subdirectories. I use some cgi scripts to handle authentication via
+<a href="http://openid.net/">OpenID</a> Everything is uploaded to my server via
+<a href="http://git-scm.com/">git</a>.</p>
+
+<p>Previously, I have used <a href="http://www.oddmuse.org/">Oddmuse</a> and subsequently
+<a href="http://www.movabletype.org/">Movable Type</a> to generate this site. I finally
+realized that each of those programs was essentially just putting a wrapper
+around my MultiMarkdown content which was the core of each page. I describe a
+bit more how I transitioned from other software
+<a href="/2009/09/multimarkdown_as_cms">here</a>.</p>
+
+<h1 id="multimarkdown">MultiMarkdown</h1>
+
+<p>The content of this site is written using the <a href="/multimarkdown/">MultiMarkdown</a>
+syntax, and then converted to XHTML. I also use
+<a href="http://daringfireball.net/projects/smartypants/">SmartyPants</a> to simplify
+making the content &#8220;typographically correct.&#8221; A custom
+<a href="http://www.w3schools.com/xsl/">XSLT</a> file modifies the plain XHTML output
+from MultiMarkdown to include a few templates and scripts to allow for proper
+page formatting (e.g. the sidebar, header, and footer).</p>
+
+<h1 id="hosting">Hosting</h1>
+
+<p>Hosted by <a href="https://www.nearlyfreespeech.net/">NearlyFreeSpeech.NET</a>. They
+offer a unique pricing plan based purely on the actual storage space and
+bandwidth used, with no monthly fees.</p>
+
+<p>However, I also make use of Amazon&#8217;s <a href="http://aws.amazon.com/s3/">S3</a> service
+for hosting larger files. The bandwidth and storage costs are <em>much</em> lower,
+but the performance is supposedly not quite good enough to act as your sole
+web server (though that is actually possible for static pages&#8230;) Basically,
+my web site (which has both static and dynamic pages) will be hosted with
+NFSN, while images and files for download will be hosted at S3.</p>
+
+<p>This does mean that my bandwidth and storage is no longer free (or more
+precisely, paid for), but the added flexibility should be worth it. (Donations
+to keep things running are certainly welcome!)</p>
+
+<h1 id="apache">Apache</h1>
+
+<p>NearlyFreeSpeech.NET uses Apache as their server software. I have modified my
+.htaccess file to send the proper Mime-type to each browser, since certain
+popular but crappy browsers still have trouble keeping up with last generation
+web standards (<em>cough</em> IE <em>cough</em>). With thanks to
+<a href="http://bitworking.org/news/134/Content-Negotiation-Considered-Harmful-Again">bitworking</a>.</p>
+
+<pre><code>RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml
+RewriteCond %{HTTP_ACCEPT} !application/xhtml\+xml\s*;\s*q=0\.?0*(\s|,|$)
+RewriteCond %{REQUEST_URI} \.html$
+RewriteRule .* - [T=application/xhtml+xml;charset=UTF-8]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml
+RewriteCond %{HTTP_ACCEPT} !application/xhtml\+xml\s*;\s*q=0\.?0*(\s|,|$)
+RewriteCond %{REQUEST_URI} !\.
+RewriteRule .* - [T=application/xhtml+xml;charset=UTF-8]
+</code></pre>
+
+<p>If you are unfortunate enough to have to use such a browser, recognize that
+this site will not look as it is supposed to&#8230;.</p>
+
+<h1 id="email">Email</h1>
+
+<p>Email is provided by <a href="http://www.google.com/a/">Google Apps</a>. For more
+information on how to use Google&#8217;s email services, see
+<a href="/2008/08/using_gmail_and_postfix">Using Gmail and Postfix</a>.</p>
+
+<h1 id="typography">Typography</h1>
+
+<p>I&#8217;ve tried to apply some principles of well thought out typography to this
+site, using the following references:</p>
+
+<ul>
+<li><p><a href="http://www.markboulton.co.uk/journal/comments/five_simple_steps_to_better_typography">Five simple steps to better typography</a></p></li>
+<li><p><a href="http://webtypography.net/sxsw2007/">Web Typography Sucks</a></p></li>
+<li><p>To see examples of this site&#8217;s default typographical styles, please see the <a href="../category/Typography/">Typography page</a>.</p></li>
+</ul>
+
+<p>It really does make a difference!</p>
+
+<h1 id="css">CSS</h1>
+
+<p>The CSS for this site is broken into separate files in order to better
+differentiate the different components. One file applies the typography
+techniques mentioned above; one applies colors; one applies the decorations
+and branding; one manages the overall page layout; one applies code to base
+the appearance of tables on that produced by the
+<a href="http://www.ctan.org/tex-archive/macros/latex/contrib/booktabs/">booktabs</a>
+package for LaTeX.</p>
+
+<p>Of course, this is all moot if you are using IE to view this site. In that
+case, I take no responsibility for the way things look on your screen. Treat
+yourself: use a <a href="http://www.mozilla.com/firefox/">real browser</a>&#8230;.</p>
+
+<h1 id="legalinfo">Legal Info</h1>
+
+<p>The content of this web site, unless otherwise specified, is licensed under a
+<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">Creative Commons License</a>
+by Fletcher T. Penney.</p>
+
+<p>Most of my software is released under the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a>. See the individual files for
+more information.</p>
+
+<!--#include virtual="${Base_URL}/templates/footer.html" --></body>
+</html>
