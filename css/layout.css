@@ -64,6 +64,10 @@
 ----------------------------------------------------------------------------------------*/
 @media screen and (max-width: 30em) {
 
+body {
+  word-wrap:break-word;
+}
+
 article {
   float: none;
   max-width: 28em;
