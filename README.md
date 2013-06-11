@@ -77,14 +77,13 @@ However, that could also be considered an opportunity to track down solutions!
 
 You can download the package:
 
-<http://github.com/fletcher/MultiMarkdown-CMS>
+<https://github.com/h0wn0w/MultiMarkdown-Prairie-CMS>
 
 You can also use git to clone the source:
 
-	git clone git://github.com/fletcher/MultiMarkdown-CMS.git
+	git clone git://github.com/h0wn0w/MultiMarkdown-Prairie-CMS.git
 
-If you know  how to use git,  I recommend that approach for  reasons that will
-become clear later.
+If you know  how to use git,  I recommend that approach for  reasons that will become clear later.
 
 
 # How do I install it? #
