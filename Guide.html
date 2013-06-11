@@ -87,13 +87,15 @@
 
 <p>On a mac, for example, you would modify <code>/etc/apache2/users/username.conf</code>. </p>
 
-<p>There are two versions of the software &#8212; the regular, and the advanced. </p>
+<hr>
 
-<p>The regular version of the software is designed to be easier to install. It can go in any folder/URL in your web host (i.e. it does <em>not</em> have to be at the root). You do have to configure the .htaccess file so that the software knows where it is located so that links are coded properly. When using this version, when you want to link to your home page, for example you would link to &#8220;index.html&#8221;, <strong>NOT</strong> &#8220;/index.html&#8221;. </p>
+<p><em>Note for MMD-CMS-Responsive:</em>
+As noted in the preface, the MMD-CMS-Responsive is the &#8220;advanced&#8221; version of MMD CMS. It takes more tweaking than the original MMD-CMS &#8220;regular&#8221; version to get everything up and running properly, but if you&#8217;re even a little competent configuring Apache, you should have no trouble at all.
+The configuration instructions continue, below. </p>
 
-<p>This flexibility comes at a cost &#8212; links <em>within</em> a page, e.g. &#8220;#footnote1&#8221;, will not work with the regular version of MMD CMS. This is a limitation of the <code>&lt;base href&gt;</code> feature. </p>
+<hr>
 
-<p>If you want to allow internal links, then you need to use the advanced version of MMD CMS. This version <em>does</em> need to be installed so that it lives at a top-level URL. This can be accomplished by putting it at the webserver root folder (wherever that is for your particular server), or by using a virtual host. I can&#8217;t support everyone in figuring out how to do that, but I have included what I did to get it working on my particular machine. </p>
+<p>This version needs to be installed so that it lives at a top-level URL. This can be accomplished by putting it at the webserver root folder (wherever that is for your particular server), or by using a virtual host. I can&#8217;t support everyone in figuring out how to do that, but I have included what I did to get it working on my particular machine. </p>
 
 <p>For Apache 2 on a Mac, do the following (all others will need to seek help elsewhere): </p>
 

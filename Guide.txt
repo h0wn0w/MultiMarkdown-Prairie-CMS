@@ -83,13 +83,15 @@ becomes
 On a mac, for example, you would modify `/etc/apache2/users/username.conf`. 
 
 
-There are two versions of the software --- the regular, and the advanced. 
+****
 
-The regular version of the software is designed to be easier to install. It can go in any folder/URL in your web host (i.e. it does *not* have to be at the root). You do have to configure the .htaccess file so that the software knows where it is located so that links are coded properly.  When using this version, when you want to link to your home page, for example you would link to "index.html", **NOT** "/index.html". 
+*Note for MMD-CMS-Responsive:* 
+As noted in the preface, the MMD-CMS-Responsive is the "advanced" version of MMD CMS. It takes more tweaking than the original MMD-CMS "regular" version to get everything up and running properly, but if you're even a little competent configuring Apache, you should have no trouble at all.
+The configuration instructions continue, below. 
 
-This flexibility comes at a cost --- links *within* a page, e.g. "#footnote1", will not work with the regular version of MMD CMS. This is a limitation of the `<base href>` feature. 
+**** 
 
-If you want to allow internal links, then you need to use the advanced version of MMD CMS. This version *does* need to be installed so that it lives at a top-level URL.  This can be accomplished by putting it at the webserver root folder (wherever that is for your particular server), or by using a virtual host. I can't support everyone in figuring out how to do that, but I have included what I did to get it working on my particular machine. 
+This version needs to be installed so that it lives at a top-level URL.  This can be accomplished by putting it at the webserver root folder (wherever that is for your particular server), or by using a virtual host. I can't support everyone in figuring out how to do that, but I have included what I did to get it working on my particular machine. 
 
 For Apache 2 on a Mac, do the following (all others will need to seek help elsewhere): 
 

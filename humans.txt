@@ -3,13 +3,14 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    <team member> -- <role> -- <twitter, adn, etc>
 
 # THANKS
 
-    <name>
+    Fletcher Penney
 
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
-    jQuery, Modernizr
+    [MultiMarkdown Content Management System](http://fletcherpenney.net/multimarkdown/cms/)
+    [The Goldilocks Approach](http://goldilocksapproach.com)

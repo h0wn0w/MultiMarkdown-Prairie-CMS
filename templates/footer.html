@@ -8,7 +8,7 @@
 <!--#endif -->
 
 </article>
-</div> <!-- end container -->
+</div> <!-- end container class from header -->
 <div id="push"></div>
     </div><!-- end wrap -->
 
@@ -18,39 +18,6 @@ This site created with the <a href="http://fletcherpenney.net/multimarkdown/cms/
 </footer>
 <!-- </div> end footer -->
 
-	<!-- jQuery if you want it -->
+	<!-- call jQuery & jQuery UI if you want them -->
 	<script type="text/javascript" language="Javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
 	<script type="text/javascript" language="Javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-
-	<script>
-	$('#red').click(function(){
-		var $addhead = $('header').addClass
-		var $addfoot = $('footer').addClass
-		if ($('header').hasClass('header-yellow')) {
-			$('header').switchClass('header-yellow', 'header-red'),
-			$('footer').switchClass('footer-yellow', 'footer-red');
-		} else {
-			$addhead('header-red', true),
-			$addfoot('footer-red', true);
-		}
-	}),
-
-	$('#yellow').click(function(){
-		if ($('header').hasClass('header-red')) {
-			$('header').switchClass('header-red', 'header-yellow'),
-			$('footer').switchClass('footer-red', 'footer-yellow');
-		} else {
-			$addhead('header-yellow', true),
-			$addfoot('footer-yellow', true);
-		}
-	}),
-
-	$('#default').click(function(){
-		if ($('header').hasClass(('header-red' || 'header-yellow'))) {
-			$('header').removeClass(('header-red' || 'header-yellow'));
-		} else {
-			$addhead('header-default', true),
-			$addfoot('footer-default', true);
-		}
-	});
-	</script>

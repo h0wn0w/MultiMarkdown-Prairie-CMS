@@ -3,9 +3,17 @@ Author:	Fletcher T. Penney
 Date:	January 31, 2010  
 Tags:	MultiMarkdown, web, server  
 
-# MultiMarkdown-Prairie-CMS #
+# Preface #
 
-The MultiMarkdown Content Management System, updated for responsive web design using the Goldilocks Approach
+Before getting on with the goods, here is what's different about this version of the MultiMarkdown-Content Management Ssystem (MMD-CMS): 
+
+The CMS is now based on responsive web design principles. The base stylesheets were pulled from and informed by [The Goldilocks Approach](goldilocksapproach.com), created by *Design by Front*. This approach is fairly different from most other responsive frameworks (e.g., [Twitter-Bootstrap](http://twitter.github.io/bootstrap/index.html), [Foundation](http://foundation.zurb.com/)) in that it uses `ems` to scale pages, rather than a grid-based system that uses pixel widths. There are many, many good responsive frameworks and CMSs out there. The Goldilocks Approach was chosen because, on the surface, it required the fewest out-of-the-box assumptions and allowed for a high degree of user configurability. Thus, it seemed most in keeping with the MMD-CMS approach of simplicity by using a bottom-up build strategy. 
+
+The boilerplate stylesheets were modified to retain, as best as possible, the layout of the original MultiMarkdown CMS. The original `layout.css` used modified portions of Matthew James Taylor's [multi-column liquid layout](http://matthewjamestaylor.com/blog/ultimate-multi-column-liquid-layouts-em-and-pixel-widths) to yield a page-centered main text container and either a right or left column wrapper. The same thing can be accomplished with the responsive framework, in more or less in the same manner. The sidebar floats right by default on a desktop or larger tablet, and can be made to float left by appending the `.left` class to the `aside` element.
+
+There's also now code for a sticky footer, courtesy of [Martin Bean](http://martinbean.co.uk) and [Ryan Fait](http://ryanfait.com/sticky-footer/). As its name implies, the footer will "stick" to the bottom of the web page regardless of content length. This is enabled by default, but is easily removed. 
+
+This is just the "advanced" branch, as opposed to the "master" *and* "advanced" branches of the original, which allows for internal page linking. So, you have the option of generating footnotes or glossary terms as needed. This takes a bit more tweaking, as noted below, but if you're going to use MultiMarkdown, then use MultiMarkdown, right? 
 
 # Introduction #
 ***NOTE**: MultiMarkdown CMS is now updated to work with MMD 3.0. If you need
@@ -112,22 +120,15 @@ becomes
 
 On a mac, for example, you would modify `/etc/apache2/users/username.conf`.
 
+****
 
-There are two versions of the software --- the regular, and the advanced.
+*Note for MMD-CMS-Responsive:* 
+As noted in the preface, the MMD-CMS-Responsive is the "advanced" version of MMD CMS. It takes more tweaking than the original MMD-CMS "regular" version to get everything up and running properly, but if you're even a little competent configuring Apache, you should have no trouble at all.
+The configuration instructions continue, below. 
 
-The regular version  of the software is  designed to be easier  to install. It
-can go in  any folder/URL in your web  host (i.e. it does *not* have  to be at
-the root). You  do have to configure  the .htaccess file so  that the software
-knows where it  is located so that  links are coded properly.  When using this
-version, when you want  to link to your home page, for  example you would link
-to "index.html", **NOT** "/index.html".
+**** 
 
-This flexibility comes at a cost --- links *within* a page, e.g. "#footnote1",
-will not work with the regular version of MMD CMS. This is a limitation of the
-`<base href>` feature.
-
-If you want to allow internal links, then you need to use the advanced version
-of MMD  CMS. This version *does*  need to be installed  so that it lives  at a
+This version needs to be installed  so that it lives  at a
 top-level URL.  This can be accomplished  by putting it at  the webserver root
 folder (wherever  that is for your  particular server), or by  using a virtual
 host. I  can't support everyone  in figuring  out how to  do that, but  I have
