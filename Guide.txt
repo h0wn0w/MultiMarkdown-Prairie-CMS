@@ -5,9 +5,9 @@ Tags:	MultiMarkdown, web, server
 
 # Preface #
 
-Before getting on with the goods, here is what's different about this version of the MMD-CMS: 
+MultiMarkdown Prairie-CMS is a fork of the MultiMarkdown Content Management System (MMD-CMS), originally written by Fletcher Penney. This section outlines the major differences between the two.  
 
-The CMS is now based on responsive web design principles. The base stylesheets were pulled from and informed by [The Goldilocks Approach](goldilocksapproach.com), created by *Design by Front*. This approach is fairly different from most other responsive frameworks (e.g., [Twitter-Bootstrap](http://twitter.github.io/bootstrap/index.html), [Foundation](http://foundation.zurb.com/)) in that it uses `ems` to scale pages, rather than a grid-based system that uses pixel widths. There are many, many good responsive frameworks and CMSs out there. The Goldilocks Approach was chosen because, on the surface, it required the fewest out-of-the-box assumptions and allowed for a high degree of user configurability. Thus, it seemed most in keeping with the MMD-CMS approach of simplicity by using a bottom-up build strategy. 
+The CMS is now based on responsive web design principles. The base stylesheets were pulled from, and informed by, [The Goldilocks Approach](goldilocksapproach.com), created by *Design by Front*. The Goldilocks Approach is fairly different from most other responsive frameworks (e.g., [Twitter-Bootstrap](http://twitter.github.io/bootstrap/index.html), [Foundation](http://foundation.zurb.com/)) in that it uses `ems` to scale pages, rather than a grid-based system that uses pixel widths. There are many, many good responsive frameworks and CMSs out there. The Goldilocks Approach was chosen because, on the surface, it required the fewest out-of-the-box assumptions and allowed for a high degree of user configurability. Thus, it seemed most in keeping with the MMD-CMS approach of simplicity by using a bottom-up build strategy. 
 
 The boilerplate stylesheets were modified to retain, as best as possible, the layout of the original MultiMarkdown CMS. The original `layout.css` used modified portions of Matthew James Taylor's [multi-column liquid layout](http://matthewjamestaylor.com/blog/ultimate-multi-column-liquid-layouts-em-and-pixel-widths) to yield a page-centered main text container and either a right or left column wrapper. The same thing can be accomplished with the responsive framework, in more or less in the same manner. The sidebar floats right by default on a desktop or larger tablet, and can be made to float left by appending the `.left` class to the `aside` element.
 
@@ -15,6 +15,10 @@ There's also now code for a sticky footer, courtesy of [Martin Bean](http://mart
 
 This is just the "advanced" branch, as opposed to the "master" *and* "advanced" branches of the original, which allows for internal page linking. So, you have the option of generating footnotes or glossary terms as needed. This takes a bit more tweaking, as noted below, but if you're going to use MultiMarkdown, then use MultiMarkdown, right? 
 
+From here forward is the MMD-CMS User's Guide as authored by Fletcher Penney. I have added a couple of things and removed the section that outlines installation of the "master" branch/version. The reason for its removal should be clear if you read the preceding paragraph. I may add, substitute, or delete portions of this over time; however, the guide, in its present form, is totally sufficient, and I am trying to break my habit of re-inventing wheels. 
+
+Cheers,
+- Howard
 
 # Introduction #
 
