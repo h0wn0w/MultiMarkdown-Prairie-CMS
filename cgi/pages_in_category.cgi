@@ -63,7 +63,7 @@ foreach my $filepath (glob("$search_path*/index.html")) {
 }
 
 if ($content ne "") {
-	print qq{<h3>Demo Category Pages</h3> 
+	print qq{<h3>Category Pages</h3> 
 <ul>
 $content
 </ul>

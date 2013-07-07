@@ -90,6 +90,10 @@ p, ul, ol, dl, blockquote {
     max-width: 30em; /* Optimal width for long-form text */
   }
 
+p {
+  margin-top: 1.618em;
+}
+
 blockquote {
   padding-left: 4em;
   font-style: italic;

@@ -28,6 +28,11 @@
     float: left;
     clear: left;
   }
+
+  .right {
+    float: right;
+    /*clear: right;*/
+  }
 }
 
 

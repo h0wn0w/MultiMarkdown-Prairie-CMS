@@ -3,25 +3,31 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 	
-	<title>MultiMarkdown-CMS</title>
+	<title>MultiMarkdown-CMS User's Guide</title>
 	<meta name="author" content="Fletcher T. Penney">
 	<meta name="date" content="January 31, 2010">
 	<meta name="tags" content="MultiMarkdown, web, server">
 <!--#include virtual="${Base_URL}/templates/head.html" --></head>
-<body><!--#include virtual="${Base_URL}/templates/header.html" --><h1 class="page-title">MultiMarkdown-CMS</h1>
-<div class="date">January 31, 2010</div><!--#include virtual="${Base_URL}/cgi/tags.cgi" -->
+<body><!--#include virtual="${Base_URL}/templates/header.html" --><h1 class="page-title">MultiMarkdown-CMS User's Guide</h1>
+<div class="date">January 31, 2010</div>
+<div class="author">Fletcher T. Penney</div><!--#include virtual="${Base_URL}/cgi/tags.cgi" -->
 
 <h1 id="preface">Preface</h1>
 
-<p>Before getting on with the goods, here is what&#8217;s different about this version of the MMD-CMS: </p>
+<p>MultiMarkdown Prairie-CMS is a fork of the MultiMarkdown Content Management System (MMD-CMS), originally written by Fletcher Penney. This section outlines the major differences between the two. </p>
 
-<p>The CMS is now based on responsive web design principles. The base stylesheets were pulled from and informed by <a href="goldilocksapproach.com">The Goldilocks Approach</a>, created by <em>Design by Front</em>. This approach is fairly different from most other responsive frameworks (e.g., <a href="http://twitter.github.io/bootstrap/index.html">Twitter-Bootstrap</a>, <a href="http://foundation.zurb.com/">Foundation</a>) in that it uses <code>ems</code> to scale pages, rather than a grid-based system that uses pixel widths. There are many, many good responsive frameworks and CMSs out there. The Goldilocks Approach was chosen because, on the surface, it required the fewest out-of-the-box assumptions and allowed for a high degree of user configurability. Thus, it seemed most in keeping with the MMD-CMS approach of simplicity by using a bottom-up build strategy. </p>
+<p>The CMS is now based on responsive web design principles. The base stylesheets were pulled from, and informed by, <a href="goldilocksapproach.com">The Goldilocks Approach</a>, created by <em>Design by Front</em>. The Goldilocks Approach is fairly different from most other responsive frameworks (e.g., <a href="http://twitter.github.io/bootstrap/index.html">Twitter-Bootstrap</a>, <a href="http://foundation.zurb.com/">Foundation</a>) in that it uses <code>ems</code> to scale pages, rather than a grid-based system that uses pixel widths. There are many, many good responsive frameworks and CMSs out there. The Goldilocks Approach was chosen because, on the surface, it required the fewest out-of-the-box assumptions and allowed for a high degree of user configurability. Thus, it seemed most in keeping with the MMD-CMS approach of simplicity by using a bottom-up build strategy. </p>
 
 <p>The boilerplate stylesheets were modified to retain, as best as possible, the layout of the original MultiMarkdown CMS. The original <code>layout.css</code> used modified portions of Matthew James Taylor&#8217;s <a href="http://matthewjamestaylor.com/blog/ultimate-multi-column-liquid-layouts-em-and-pixel-widths">multi-column liquid layout</a> to yield a page-centered main text container and either a right or left column wrapper. The same thing can be accomplished with the responsive framework, in more or less in the same manner. The sidebar floats right by default on a desktop or larger tablet, and can be made to float left by appending the <code>.left</code> class to the <code>aside</code> element.</p>
 
 <p>There&#8217;s also now code for a sticky footer, courtesy of <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>. As its name implies, the footer will &#8220;stick&#8221; to the bottom of the web page regardless of content length. This is enabled on the default page, but is easily removed. </p>
 
 <p>This is just the &#8220;advanced&#8221; branch, as opposed to the &#8220;master&#8221; <em>and</em> &#8220;advanced&#8221; branches of the original, which allows for internal page linking. So, you have the option of generating footnotes or glossary terms as needed. This takes a bit more tweaking, as noted below, but if you&#8217;re going to use MultiMarkdown, then use MultiMarkdown, right? </p>
+
+<p>From here forward is the MMD-CMS User&#8217;s Guide as authored by Fletcher Penney. I have added a couple of things and removed the section that outlines installation of the &#8220;master&#8221; branch/version. The reason for its removal should be clear if you read the preceding paragraph. I may add, substitute, or delete portions of this over time; however, the guide, in its present form, is totally sufficient, and I am trying to break my habit of re-inventing wheels. </p>
+
+<p>Cheers,
+- Howard</p>
 
 <h1 id="introduction">Introduction</h1>
 

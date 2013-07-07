@@ -77,6 +77,10 @@
 				<div class="date"><xsl:value-of select="/html/head/meta[translate(@name,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz') = 'date']/@content"/>
 				</div>
 			</xsl:if>
+			<xsl:if test="/html/head/meta[translate(@name,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz') = 'author']/@content != ''">
+				<div class="author"><xsl:value-of select="/html/head/meta[translate(@name,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz') = 'author']/@content"/>
+				</div>
+			</xsl:if>
 			<xsl:if test="/html/head/meta[translate(@name,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz') = 'tags']/@content != ''">
 				<xsl:text disable-output-escaping="yes"><![CDATA[<!--#include virtual="${Base_URL}/cgi/tags.cgi" -->]]></xsl:text>
 			</xsl:if>

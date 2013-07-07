@@ -1,0 +1,385 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+	
+	<title>MultiMarkdown-Prairie CMS User's Guide</title>
+	<meta name="author" content="Fletcher Penney &amp; Howard Buddin">
+	<meta name="date" content="June 11, 2013">
+	<meta name="tags" content="MultiMarkdown, Responsive, Server, Web">
+<!--#include virtual="${Base_URL}/templates/head.html" --></head>
+<body><!--#include virtual="${Base_URL}/templates/header.html" --><h1 class="page-title">MultiMarkdown-Prairie CMS User's Guide</h1>
+<div class="date">June 11, 2013</div>
+<div class="author">Fletcher Penney &amp; Howard Buddin</div><!--#include virtual="${Base_URL}/cgi/tags.cgi" -->
+
+<h1 id="section-toc">Table of Contents</h1>
+
+<ol>
+<li><a href="#section-preface">Preface</a></li>
+<li><a href="#section-intro">Introduction</a></li>
+<li><a href="#section-where">Where Do I Get It?</a></li>
+<li><a href="#section-install">How do I install it?</a></li>
+<li><a href="#section-apache">How to configure Apache</a></li>
+<li><a href="#section-content">How do I add content to my site?</a></li>
+<li><a href="#section-customize">Customize Your Templates and CSS Files to Make everything look pretty&#8230;</a></li>
+<li><a href="#section-features">Features</a></li>
+<li><a href="#section-settings">Settings</a></li>
+<li><a href="#section-git">Advanced use of git</a></li>
+<li><a href="#section-software">Included software</a></li>
+<li><a href="#section-license">License</a></li>
+</ol>
+
+<h1 id="section-preface">Preface</h1>
+
+<p>MultiMarkdown Prairie-CMS is a fork of the MultiMarkdown Content Management System (MMD-CMS), originally written by Fletcher Penney. This section outlines the major differences between the two. </p>
+
+<h2 id="whatsupwiththename">What&#8217;s Up With the Name?</h2>
+
+<p>In short, it&#8217;s because as I write this I&#8217;m finishing up my post-doctoral fellowship in Wichita, KS. Wichita happens to be smack in the middle of this nation&#8217;s (former) prairie heartland. I decided that since nearly 100% of my coding knowledge came while living here that the name was appropriate, if not a bit odd otherwise. </p>
+
+<h2 id="stylisticnotfunctionalchanges">Stylistic, Not Functional, Changes</h2>
+
+<p>The MultiMarkdown-Prairie-CMS is <em>not</em> a functional re-working of the original; however, it is a complete, under-the-hood replacement of the stylesheets. This iteration was built on responsive web design principles. The base stylesheets were pulled from, and informed by, <a href="goldilocksapproach.com">The Goldilocks Approach</a>, created by <em>Design by Front</em>. The Goldilocks Approach is fairly different from most other responsive frameworks I&#8217;ve tried or seen (e.g., <a href="http://twitter.github.io/bootstrap/index.html">Twitter-Bootstrap</a>, <a href="http://foundation.zurb.com/">Foundation</a>) in that it uses <code>ems</code> to scale pages, rather than a grid-based system that uses pixel widths. There are many, many good responsive frameworks and CMSs out there. The Goldilocks Approach was chosen from amongst these because, on the surface, it required the fewest out-of-the-box assumptions and allowed for a high degree of user configurability. Thus, it seemed most in keeping with the original MMD-CMS approach of simplicity by using a bottom-up build strategy. See the <a href="#section-customize">Customize Your Templates</a> section for more about the changes and <code>.css</code> files. </p>
+
+<p>There&#8217;s also now code for a sticky footer, courtesy of <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>. As its name implies, the footer will &#8220;stick&#8221; to the bottom of the web page regardless of content length. This is enabled on the default page, but is easily removed. </p>
+
+<p>This is just the &#8220;advanced&#8221; branch, as opposed to the &#8220;master/regular&#8221; <em>and</em> &#8220;advanced&#8221; branches of the original, which allows for internal page linking. So, you have the option of generating footnotes or glossary terms as needed. This takes a bit more tweaking, as noted below, but if you&#8217;re going to use MultiMarkdown, then use MultiMarkdown, right? </p>
+
+<p>From here forward is the MMD-CMS User&#8217;s Guide as authored by Fletcher Penney. I have added, removed, and replaced text in various sections. I attempted to do this judiciously, when I felt it was absolutely necessary, or where I felt it clarified the installation and/or use of MMD-CMS. Importantly, I removed instructions for installation of the &#8220;regular&#8221; version of MMD-CMS. The reason for its removal should be clear if you read the preceding paragraph. I may continue to add, substitute, or delete portions of this over time; however, the guide, in its present form, is totally sufficient, and I am trying to break my habit of re-inventing wheels. </p>
+
+<p>Cheers,<br>
+Howard</p>
+
+<p><a href="#section-toc">Back To TOC</a></p>
+
+<h1 id="section-intro">Introduction</h1>
+
+<p>MultiMarkdown CMS is basically a collection of utilities that allows you to run a web site without any other software. I have tried a variety of packages when hosting my own web site. In the end, however, I was basically using those programs to put a wrapper around my content, which was always managed by MultiMarkdown. Additionally, none of those programs really fit into my workflow, and the performance was often not what I would like. </p>
+
+<p>So, instead, I decided to run my web site with a minimal amount of software. In fact, it could be run with MultiMarkdown alone, but I would miss out on some of the interactive features. </p>
+
+<p>The basic premise is: </p>
+
+<ul>
+<li><p>Create a plain text file (in MMD syntax) for each page of the site </p></li>
+<li><p>Use {~~<code>mmd2web.pl</code>~&gt;<code>make</code>~~}{&gt;&gt;@whb - 2013.06.26&lt;&lt;} to convert to XHTML, including some markup to format the pages for the web site </p></li>
+<li><p>Upload the XHTML file (and optionally the &#8216;.txt&#8217; file) to your web server, and you&#8217;re off </p></li>
+</ul>
+
+<p>The newly formatted XHTML file includes SSI code that causes Apache to add certain templates to the page. This allows you to standardize the appearance of each page (e.g. headers, footers, sidebar, etc). </p>
+
+<p>Additionally, CGI scripts are included to manage archives, Atom feeds, tags, searching, OpenID authentication, comments, and more. </p>
+
+<p>When building the system, I started off with a collection of essentially static web pages. I then added cgi scripts only where I thought they were absolutely necessary to give my site the interactive features I desired. If you&#8217;re someone who likes lots of widgets and gadgets on their site &#8212; I won&#8217;t be programming them. However, because of the simple philosophy behind this approach, the pages should be compatible with just about anything you want to add that doesn&#8217;t require a backend database. </p>
+
+<p>However, keep in mind that my goal is simplicity. I don&#8217;t want lots of plugins, extensions, modules, etc. I don&#8217;t want lots of different themes that I can choose from. If you want these things, then another package might be for you. But if you want a simple method of creating a web site that focuses on content, this may be for you. </p>
+
+<p>This package certainly requires more tinkering than a prebuilt solution. If you&#8217;re not familiar with &#8216;.htaccess&#8217; files, configuring apache, changing file permissions, and examining error logs, then you might run into some roadblocks; however, that could also be considered an opportunity to track down solutions! </p>
+
+<p><a href="#section-toc">Back To TOC</a></p>
+
+<h1 id="section-where">Where do I get it?</h1>
+
+<p>You can <a href="http://github.com/h0wn0w/MultiMarkdown-Prairie-CMS">download the package</a> directly from GitHub. </p>
+
+<p>You can also use git to clone the source: </p>
+
+<p><code>git clone git://github.com/h0wn0w/MultiMarkdown-Prairie-CMS.git</code></p>
+
+<p>If you know how to use git, I recommend that approach for reasons that will become clear later. </p>
+
+<p><a href="#section-toc">Back To TOC</a></p>
+
+<h1 id="section-install">How do I install it?</h1>
+
+<p>Once you download and unpack the software, place the directory where your web server software expects it. </p>
+
+<p><em>Please note: if you have trouble installing the software, do a web search to figure out what to do. I&#8217;m happy to help troubleshoot my software, but I don&#8217;t want to get into trying to troubleshoot everyone&#8217;s web server setup&#8230;.</em> </p>
+
+<p>For example, I place mine in <code>/Users/fletcher/Sites/mmd-static</code>. </p>
+
+<p>You should now be able to go to something like: </p>
+
+<pre><code>http://127.0.0.1/~fletcher/mmd_static/index.html
+</code></pre>
+
+<p>And see <em>something</em> &#8212; it will likely give you some error messages, however. </p>
+
+<p>{++Ultimately, this version needs to be installed so that it lives at a top-level URL. This can be accomplished by putting it at the web server root folder (wherever that is for your particular server), or by using a virtual host. I can&#8217;t support everyone in figuring out how to do that, but I have included what I did to get it working on my particular machine.++}{&gt;&gt;@whb - 2013.06.11&lt;&lt;}</p>
+
+<p><a href="#section-toc">Back To TOC</a></p>
+
+<h1 id="section-apache">How to configure Apache</h1>
+
+<hr>
+
+<p><em>Note for MMD-CMS-Responsive:</em>
+As noted in the preface, the MMD-CMS-Responsive is the &#8220;advanced&#8221; version of MMD CMS. It takes more tweaking than the original MMD-CMS &#8220;regular&#8221; version to get everything up and running properly, but if you&#8217;re even a little competent configuring Apache, you should have no trouble at all.
+The configuration instructions continue, below. </p>
+
+<hr>
+
+<p>The following instructions are for Apache 2.X running on Mac OS 10.X (all others will need to seek help elsewhere).</p>
+
+<p>Modify your Apache configuration file</p>
+
+<p><code>/etc/apache2/users/username.conf</code></p>
+
+<p>so that</p>
+
+<pre><code>AllowOverride none
+</code></pre>
+
+<p>becomes </p>
+
+<pre><code>AllowOverride All
+</code></pre>
+
+<p>{&#8211;This version needs to be installed so that it lives at a top-level URL. This can be accomplished by putting it at the webserver root folder (wherever that is for your particular server), or by using a virtual host. I can&#8217;t support everyone in figuring out how to do that, but I have included what I did to get it working on my particular machine.
+&#8211;}{&gt;&gt;@whb - 2013.06.11&lt;&lt;}
+Next, do the following: </p>
+
+<ul>
+<li><p>As an admin, go to <code>/etc/apache2/extra</code> </p></li>
+<li><p><code>sudo pico httpd-vhosts.conf</code> (or similar) </p></li>
+<li><p>Comment out the existing virtualhost sections (add a &#8220;#&#8221; at the beginning of the line) </p></li>
+<li>
+<p>Then, add something like the following at the end of the file: </p>
+
+<pre><code>&lt;VirtualHost *:80&gt;
+    DocumentRoot "/Users/fletcher/Sites/mmd_static"
+    ServerName mmd.local
+&lt;/VirtualHost&gt;
+</code></pre>
+</li>
+<li>
+<p>Then add the following to <code>/etc/hosts</code>: </p>
+
+<pre><code>127.0.0.1       mmd.local
+::1             mmd.local
+</code></pre>
+
+<p>(The second line is really only needed with Lion - thanks to Daniel Driver for pointing this out.)</p>
+</li>
+<li>
+<p>Finally, <code>sudo pico /etc/apache2/httpd.conf</code> and uncomment the following line: </p>
+
+<pre><code>Include /private/etc/apache2/extra/httpd-vhosts.conf
+</code></pre>
+</li>
+</ul>
+
+<p>{++For Mac OS 10.6 and earlier, ++}{&gt;&gt;@whb - 2013.06.11&lt;&lt;}{~~If you restart ~&gt; restart~~}{&gt;&gt;@whb - 2013.06.11&lt;&lt;} Web Sharing in the control panel, you should now be able to access your site by pointing your browser to <code>http://mmd.local/</code>. It should look much better than the first time, but the default CSS is ugly. {++</p>
+
+<p>++}{&gt;&gt;@whb - 2013.06.26&lt;&lt;}There are {~~two~&gt;a few~~}{&gt;&gt;@whb - 2013.06.26&lt;&lt;} sample articles, {~~and one sample tag~&gt;tags~~}{&gt;&gt;@whb - 2013.06.26&lt;&lt;},{++ and examples of how pages can be added at various levels via nested directories++}{&gt;&gt;@whb - 2013.06.26&lt;&lt;} to get you started. </p>
+
+<p>{==You can then modify the <code>.htaccess</code> file just like the regular version. ==}{&gt;&gt;change this to describe how to modify the .htaccess file&lt;&lt;}</p>
+
+<p><a href="#section-toc">Back To TOC</a></p>
+
+<h1 id="section-content">How do I add content to my site?</h1>
+
+<p>You can add content anywhere within the MultiMarkdown CMS directory. You can create folders, and bury your content away. Keep in mind that the archives feature only locates pages in a <code>/YYYY/MM/</code> folder, e.g. the sample posts in <code>/2010/01/</code>{++, etc++}{&gt;&gt;@whb - 2013.06.26&lt;&lt;}. Other folders are not treated as &#8220;blog posts{++,++}{&gt;&gt;@whb - 2013.06.26&lt;&lt;}&#8221;{++ but rather as &#8220;normal&#8221; site pages++}{&gt;&gt;@whb - 2013.06.26&lt;&lt;}. My site is an example of this structure. </p>
+
+<p>To process the files into HTML, you need to have a working installation of <a href="http://fletcherpenney.net/multimarkdown/">MultiMarkdown</a>. </p>
+
+<p>Once you add the text files, you need to run {~~<code>mmd2web.pl</code> to create an html file. This uses the <code>xhtml-static-site.xslt</code> file to add the appropriate templates to your documents. You will also need to change the permissions on your <code>.html</code> files so that the execute bit is enabled (required by the <a href="http://httpd.apache.org/docs/1.3/mod/mod_include.html#xbithack">XBitHack</a> feature in order to enable SSI without screwing everything else up).~&gt;<code>make</code> from the root directory of your site.~~}{&gt;&gt;@whb - 2013.06.26&lt;&lt;} {++To do this, fire up Terminal.app (or whatever you prefer to use to execute shell commands), navigate to, e.g., <code>~/Sites/mysite/</code> and type <code>make</code>. This executes the commands in &#8220;Makefile,&#8221; which basically uses the <code>xhtml-static-site.xslt</code> file to add the appropriate templates to your documents and changes the permissions on your <code>.html</code> files so that the execute bit is enabled.++}{&gt;&gt;@whb - 2013.06.26&lt;&lt;}</p>
+
+<p><a href="#section-toc">Back To TOC</a></p>
+
+<h1 id="section-customize">Customize Your Templates and CSS Files to Make Everything Look Pretty&#8230;.</h1>
+
+<p>As noted in the preface, the major difference between this and the original version of the MMD-CMS is that this iteration was designed using <a href="http://alistapart.com/article/responsive-web-design">responsive web design</a> principles. More specifically, the stylesheets used in this fork were pulled from <a href="goldilocksapproach.com">The Goldilocks Approach</a> to responsive web design. They were modified so that the default desktop layout was effectively identical to the original MMD-CMS, but would adapt to all of the varying mobile screen sizes of today&#8217;s landscape.</p>
+
+<p>Of the <code>.css</code> files, <code>custom.css</code> is probably the one you want to focus on first if you&#8217;re looking for aesthetic tweaks. The other two main files to look at would be <code>global.css</code> and <code>layout.css</code>; the names should be dead giveaways for which file does what. </p>
+
+<p>The boilerplate stylesheets were modified to retain, as best as possible, the layout of the original MultiMarkdown CMS. The original <code>layout.css</code> used modified portions of Matthew James Taylor&#8217;s <a href="http://matthewjamestaylor.com/blog/ultimate-multi-column-liquid-layouts-em-and-pixel-widths">multi-column liquid layout</a> to yield a page-centered main text container and either a right or left column wrapper. The same thing can be accomplished with the responsive framework, in more or less in the same manner. The sidebar floats right by default on a desktop or larger tablet, and can be made to float left by appending the <code>.left</code> class to the <code>aside</code> element.</p>
+
+<p><a href="#section-toc">Back To TOC</a></p>
+
+<h1 id="section-features">Features</h1>
+
+<p>Included with MultiMarkdown-CMS are several cgi scripts that add additional features: </p>
+
+<ul>
+<li><p>Pages in the <code>/YYYY/MM/</code> hierarchy are treated as &#8220;blog posts&#8221; - organized by date </p></li>
+<li><p>An archive of blog posts is available at <code>/archives/</code>, you can also go to any year or year/month and see a list of posts in that month </p></li>
+<li><p>Visitors can leave comments on any blog post (by default comments are not accepted on other pages) </p></li>
+<li><p>Visitors are authenticated via OpenID for leaving comments </p></li>
+<li><p>Two Atom feeds are generated automatically - one for blog posts, and one for comments </p></li>
+<li><p>The <code>/sitemap.xml</code> file generates a Google compatible sitemap of the content of your site </p></li>
+<li><p>By default, the home page lists the last 15 blog posts </p></li>
+<li><p>By default, <code>index.html</code> pages show a list of the other pages within that folder </p></li>
+<li><p>A built-in search function is available (though setting up a <a href="http://www.google.com/cse/">Custom Search Engine</a> isn&#8217;t a bad idea either) </p></li>
+<li><p>A list of similar pages can be added to each page in the site </p></li>
+<li><p>Several tag related features are available automatically </p></li>
+</ul>
+
+<p>These features are all demonstrated by the default configuration - feel free to modify the scripts as needed for your own requirements. </p>
+
+<p><a href="#section-toc">Back To TOC</a></p>
+
+<h1 id="section-settings">Settings</h1>
+
+<p>There are a couple of configuration changes that should be done before going live with this software: </p>
+
+<ul>
+<li><p>the root <code>.htaccess</code> file should be changed to reflect your desired time zone </p></li>
+<li><p>four files in <code>/cgi/</code> contain the phrase &#8220;enter your password here&#8221; &#8212; this should be changed to a private passphrase for better security when handling OpenID authentication </p></li>
+</ul>
+
+<p>Obviously, I recommend improving the CSS design, and tweaking the various templates to construct the look of your site. </p>
+
+<p><a href="#section-toc">Back To TOC</a></p>
+
+<h1 id="section-git">Advanced use of git</h1>
+
+<p>One of the things I really wanted to be able to do was to manage my site on my laptop, experiment with it to be sure it works after any changes are made, and only then to upload my changes to the live server. I have tried to design the cgi scripts so that they configure themselves as much as possible, so that the same code can be run locally, or from a production server. </p>
+
+<p>My workflow is that I make changes in <code>/Users/fletcher/Sites/mmd_static/</code> as described above. That directory was created as a git clone of the MultiMarkdown-CMS software(as above). </p>
+
+<p>I then add a remote repository to the git repo: </p>
+
+<pre><code>git remote add live ssh://user@my.live.host/path/to/public
+</code></pre>
+
+<p>where the username and host are what I would normally use to ssh into my web provider. <code>/path/to/public</code> is the path to the directory that holds my web site. </p>
+
+<p>This allows me to use git to upload a copy of my local site to my web host when I am satisfied with the changes. Additionally, by storing my web site in a git repository, I can undo changes when I make a mistake, and I can also go back to any previous version of my site. </p>
+
+<p>One trick, though, is that you have to configure the remote repository to update the remote copies of all files after every <code>git push</code>. To do this, ssh into your account, and go to the public directory. (You may want to back everything up at this point&#8230;.) Then do the following to create the remote git repository: </p>
+
+<pre><code>git init
+cd .git/hooks
+pico post-update
+</code></pre>
+
+<p>and then put the following in the file: </p>
+
+<pre><code>#!/bin/sh
+#
+cd /path/to/public
+/usr/bin/env -i /usr/local/bin/git reset --hard
+chmod g+s cgi/accept_comment.cgi
+</code></pre>
+
+<p>What this does is force git on the remote server to reset the remote directory to match the state of the repository itself. Then I change the permissions on accept_comment.cgi so that it is permission to write to the comments files. </p>
+
+<p>You can, of course, add your own commands to this file as well. </p>
+
+<p>If you use the same approach, whenever you want to upload your changes, simply type: </p>
+
+<pre><code>git push live master
+</code></pre>
+
+<p>Your changes will be uploaded, then the remote repository will be reset so it&#8217;s up to date, and the permissions will be fixed on accept_comment.cgi. </p>
+
+<p>Remember, since you have a read-only connection to my github repository, your changes and private files cannot be uploaded. You can still use <code>git pull origin master</code> to update to the latest version of software I have released. This should not overwrite any changes you have made, since git is pretty good at avoiding &#8220;collisions&#8221;. I&#8217;ve only been using this &#8220;triple repository&#8221; approach for a little while, but so far it&#8217;s been convenient in allowing me to keep private and public files separate. </p>
+
+<p><strong>NOTE</strong>: This set-up works for me. I don&#8217;t promise it will work for you, or that it won&#8217;t mess something up. I am not a git expert. I simply patched this together with a lot of help from Google. I can&#8217;t really offer any support if it&#8217;s not working for you.</p>
+
+<p><a href="#section-toc">Back To TOC</a></p>
+
+<h1 id="section-software">Included Software</h1>
+
+<p>This software would not be possible without work previously done for many other projects: </p>
+
+<h2 id="net-openid-consumer">Net-OpenID-Consumer</h2>
+
+<ul>
+<li>by Brad Fitzpatrick</li>
+<li><a href="http://search.cpan.org/~mart/Net-OpenID-Consumer/">http://search.cpan.org/~mart/Net-OpenID-Consumer/</a></li>
+</ul>
+
+<p>Used for OpenID authentication. </p>
+
+<h2 id="crypt-dh">Crypt-DH</h2>
+
+<ul>
+<li>by Benjamin Trott</li>
+<li><a href="http://search.cpan.org/dist/Crypt-DH/">http://search.cpan.org/dist/Crypt-DH/</a></li>
+</ul>
+
+<p>Crypt-DH is used to enable the OpenID authentication. </p>
+
+<h2 id="xml-atom-simplefeed">XML-Atom-Simplefeed</h2>
+
+<ul>
+<li>by Aristotle Pagaltzis</li>
+<li><a href="http://search.cpan.org/~aristotle/XML-Atom-SimpleFeed/">http://search.cpan.org/~aristotle/XML-Atom-SimpleFeed/</a></li>
+</ul>
+
+<p>Used to generate the atom feeds. </p>
+
+<h2 id="vectormap.pm">VectorMap.pm</h2>
+
+<ul>
+<li>by Fletcher T. Penney</li>
+<li><a href="http://fletcherpenney.net/">http://fletcherpenney.net/</a></li>
+</ul>
+
+<p>Used to find similar pages, and perform searches of site content. </p>
+
+<h2 id="lingua-stem">Lingua-Stem</h2>
+
+<ul>
+<li>by Benjamin Franz and Jim Richardson</li>
+<li><a href="http://search.cpan.org/dist/Lingua-Stem/">http://search.cpan.org/dist/Lingua-Stem/</a></li>
+</ul>
+
+<p>Used by my VectorMap searching software to improve results </p>
+
+<h2 id="multimarkdown">MultiMarkdown</h2>
+
+<ul>
+<li>by Fletcher T. Penney</li>
+<li><a href="http://fletcherpenney.net/multimarkdown/">http://fletcherpenney.net/multimarkdown/</a></li>
+</ul>
+
+<p>MultiMarkdown is my update to John Gruber&#8217;s <a href="http://daringfireball.net/projects/markdown/">Markdown</a> software. </p>
+
+<h2 id="smartypants">SmartyPants</h2>
+
+<ul>
+<li>by John Gruber</li>
+<li><a href="http://daringfireball.net/projects/smartypants/">http://daringfireball.net/projects/smartypants/</a></li>
+</ul>
+
+<p>SmartyPants is another program by John Gruber, and is designed to add &#8220;smart&#8221; typography to HTML documents, including proper quotes, dashes, and ellipses. Additionally, there are several variations of the SmartyPants files to handle different localizations (specifically, Dutch, French, German, and Swedish). These localizations were provided by Joakim Hertze. </p>
+
+<h2 id="text::asciimathml">Text::ASCIIMathML</h2>
+
+<ul>
+<li>by Mark Nodine</li>
+<li><a href="http://search.cpan.org/~nodine/">http://search.cpan.org/~nodine/</a></li>
+</ul>
+
+<p>This perl module adds support for converting the ASCIIMathML syntax into MathML markup suitable for inclusion in XHTML documents. </p>
+
+<p><a href="#section-toc">Back To TOC</a></p>
+
+<h1 id="section-license">License</h1>
+
+<pre><code>Copyright (C) 2010  Fletcher T. Penney &lt;http://fletcherpenney.net&gt;
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the
+   Free Software Foundation, Inc.
+   59 Temple Place, Suite 330
+   Boston, MA 02111-1307 USA
+</code></pre>
+
+<p><a href="#section-toc">Back To TOC</a></p>
+
+<!--#include virtual="${Base_URL}/templates/footer.html" --></body>
+</html>
